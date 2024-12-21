@@ -30,6 +30,7 @@ $$
 
 where:
 - $` \mathbf{y} = [y_1, y_2, \dots, y_m] `$ are the neuron outputs (projections onto the principal components),
+
 - $` \sum_{k=1}^j y_k w_{ik} `$ is the sum of corrections to eliminate the influence of previous components.
 
 Unlike traditional PCA, which computes the components through eigen decomposition or via SVD, Sanger's Rule enables an online, iterative approach to compute multiple principal components. This is particularly useful when dealing with streaming data or datasets too large to fit into memory
