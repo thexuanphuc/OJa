@@ -7,7 +7,7 @@ Oja's Rule extends the classical Hebbian learning rule by introducing weight nor
 The formula for weight updates in Oja's Rule is:
 
 $$
-\Delta w_i = \eta (x_i y - y^2 w_i),
+\Delta \mathbf{w} = \eta y (\mathbf{x} - y \mathbf{w})
 $$
 
 where:
@@ -16,7 +16,29 @@ where:
 - $` \mathbf{w} = [w_1, w_2, \dots, w_n] `$ are the weights of the neuron,
 - $` y = \mathbf{w}^T \mathbf{x} `$ is the neuron output.
 
-This method efficiently finds the first eigenvector but cannot extract additional components. This limitation is addressed in Sanger's Rule.
+We will prove that the weight $\mathbf{w}$ converge to the first eigenvector:
+
+- If we multiply two sides of equation with $\mathbf{w}^T$:
+
+$$\Delta \mathbf{w} = \eta y (\mathbf{x} - y \mathbf{w}) \text{  }\vert  \mathbf{w}^T$$
+
+$$\Delta (\mathbf{w}^T \mathbf{w}) = \eta y \mathbf{w}^T (\mathbf{x} - y \mathbf{w}) = y^2 \cdot (1 - \Vert W \Vert ^ 2)$$
+
+$$\Delta (\mathbf{w}^T \mathbf{w}) = y^2 \cdot (1 - \Vert \mathbf{w} \Vert ^ 2) = 0$$
+$\Rightarrow$ We normaize $ \Vert \mathbf{w} \Vert = 1$ to make it converge
+
+- The weight $\mathbf{w}$ is eigenvector of Input covariance matrix $\mathbf{x}\mathbf{x}^T$
+
+
+$$\Delta \mathbf{w} = \eta(\mathbf{x}\mathbf{x}^T\mathbf{w} - \mathbf{w}^T\mathbf{x}\mathbf{x}^T\mathbf{w}\mathbf{w}) $$
+
+$$\Delta \mathbf{w}= \mathbf{Q} \mathbf{w} - (\mathbf{w}^T\mathbf{Q} \mathbf{w})\mathbf{w}$$
+
+$\rightarrow$ If input $\mathbf{x}$ is zero mean, we have the matrix $\mathbf{Q} = \mathbf{x}\mathbf{x}^T$ become covariance matrix. 
+
+
+
+$\Rightarrow$ This method efficiently finds the first eigenvector but cannot extract additional components. This limitation is addressed in Sanger's Rule.
 
 ## Sanger's Rule: Extending Oja's Rule for PCA
 
