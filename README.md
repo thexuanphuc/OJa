@@ -54,3 +54,8 @@ ICA assumes that mixed signals are a superposition of independent sources. The g
 ## Connection to PCA and Advantages
 
 PCA, implemented through Oja's and Sanger's Rule, effectively reduces data dimensionality while preserving the primary variance structure. However, it does not account for non-linear dependencies among variables. ICA, on the other hand, is aimed at uncovering hidden independent sources, making it indispensable for tasks such as signal processing (e.g., separating sound or image sources).
+
+## 2D grid of output neurons' weights as an image
+
+![](https://github.com/Pqlet/OJa/blob/main/image-pres/training_ims.gif)
+
