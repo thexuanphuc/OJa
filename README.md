@@ -11,10 +11,10 @@ $$
 $$
 
 where:
-- $  \eta  $ is the learning rate, 
-- $ \mathbf{x} = [x_1, x_2, \dots, x_n] $ is the input vector,
-- $ \mathbf{w} = [w_1, w_2, \dots, w_n] $ are the weights of the neuron,
-- $ y = \mathbf{w}^T \mathbf{x} $ is the neuron output.
+- $`  \eta  `$ is the learning rate, 
+- $` \mathbf{x} = [x_1, x_2, \dots, x_n] `$ is the input vector,
+- $` \mathbf{w} = [w_1, w_2, \dots, w_n] `$ are the weights of the neuron,
+- $` y = \mathbf{w}^T \mathbf{x} `$ is the neuron output.
 
 This method efficiently finds the first eigenvector but cannot extract additional components. This limitation is addressed in Sanger's Rule.
 
